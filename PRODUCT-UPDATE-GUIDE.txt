@@ -1,0 +1,37 @@
+GIFTXINDIA WEBSITE — HOW TO ADD OR UPDATE PRODUCTS
+
+This is a static website only. It does NOT include an admin dashboard, staff login, Supabase, database or backend.
+
+TO ADD A PRODUCT:
+1. Copy the product image into the assets folder (recommended: JPG or WebP, landscape/square, compressed for web).
+2. Open assets/products-data.js.
+3. Add a new object inside the window.GIFTX_PRODUCTS array, before the closing ];
+4. Give every product a unique id (lowercase, hyphen-separated).
+5. Set category to one of: executive, tech, employee, festive, promo.
+6. Set image to the path of the image inside assets/.
+7. Save, upload the changed files to GitHub and redeploy on Vercel.
+
+PRODUCT TEMPLATE:
+{
+  id: 'new-product-code',
+  name: 'New Product Name',
+  category: 'executive',
+  tag: 'Executive Collection',
+  image: 'assets/new-product.webp',
+  description: 'Short product description shown on the products page.',
+  details: 'Additional product information shown on the detail page.',
+  featured: false
+}
+
+TO EDIT: Find the product object in assets/products-data.js and change its details.
+TO REMOVE: Delete that product object from the array (keep commas between objects valid).
+
+The Products page automatically renders products from this file. Each product has its own detail URL using product-detail.html?id=PRODUCT-ID.
+
+DEPLOYMENT:
+- Upload the contents of the giftxindia.web folder to the root of your GitHub repository.
+- Keep index.html at the repository root.
+- Deploy the repository on Vercel as a static site. No build command is required; output directory is the repository root.
+- Test Home, Products, Product Details, Catalogue, Contact and Quote pages after deployment.
+
+NOTE: The current quote/contact forms may require a form service or backend to deliver enquiries. A static HTML form alone does not send submissions to your email. Configure a form provider before relying on online enquiries.
